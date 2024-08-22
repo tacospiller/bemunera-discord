@@ -38,7 +38,8 @@ namespace Bemunera.LocalClient
                 };
             }
 
-            await client.LoginAsync(Discord.TokenType.Bot, Environment.GetEnvironmentVariable("BEMUNERA_DISCORD_TOKEN"));
+            var token = Environment.GetEnvironmentVariable("BEMUNERA_DISCORD_TOKEN", EnvironmentVariableTarget.Machine);
+            await client.LoginAsync(Discord.TokenType.Bot, token);
             await client.StartAsync();
 
             await Task.Delay(-1);

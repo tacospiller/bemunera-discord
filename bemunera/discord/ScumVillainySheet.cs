@@ -15,24 +15,12 @@ namespace Bemunera.Core
                         new EmbedFieldBuilder().WithName("스트레스").WithValue(Utils.EmojiBar(Stress, MaxStress, ":broken_heart:", ":heart:")).WithIsInline(true),
                         new EmbedFieldBuilder().WithName("트라우마").WithValue(string.IsNullOrEmpty(Trauma) ? "없음" : Trauma).WithIsInline(true),
                         new EmbedFieldBuilder().WithName("피해").WithValue(string.IsNullOrEmpty(Damage) ? "없음" : Damage),
-                        new EmbedFieldBuilder().WithName("크레드").WithValue(Creds == 0 ? "없음" : Utils.EmojiRepeat(Creds, ":gem:")),
-                        new EmbedFieldBuilder().WithName("저축").WithValue(Savings == 0 ? "없음" : Utils.EmojiRepeat(Savings, ":moneybag:")),
+                        new EmbedFieldBuilder().WithName("크레드").WithValue(Creds == 0 ? "없음" : Utils.EmojiRepeat(Creds, ":gem:")).WithIsInline(true),
+                        new EmbedFieldBuilder().WithName("저축").WithValue(Savings == 0 ? "없음" : Utils.EmojiRepeat(Savings, ":moneybag:")).WithIsInline(true),
                         new EmbedFieldBuilder().WithName("특수 능력").WithValue(Skills.StringJoin("\n") ?? "없음"),
-                        new EmbedFieldBuilder().WithName("통찰").WithValue(Utils.EmojiBar(Cat1, 6, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("체력").WithValue(Utils.EmojiBar(Cat2, 6, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("의지").WithValue(Utils.EmojiBar(Cat3, 6, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("공작").WithValue(Utils.EmojiBar(Act11, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("기동").WithValue(Utils.EmojiBar(Act21, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("명령").WithValue(Utils.EmojiBar(Act31, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("의료").WithValue(Utils.EmojiBar(Act12, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("싸움").WithValue(Utils.EmojiBar(Act22, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("조율").WithValue(Utils.EmojiBar(Act32, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("조사").WithValue(Utils.EmojiBar(Act13, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("조타").WithValue(Utils.EmojiBar(Act23, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("친교").WithValue(Utils.EmojiBar(Act33, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("해킹").WithValue(Utils.EmojiBar(Act14, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("잠행").WithValue(Utils.EmojiBar(Act24, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true),
-                        new EmbedFieldBuilder().WithName("현혹").WithValue(Utils.EmojiBar(Act34, 3, ":white_square_button:", ":white_large_square:")).WithIsInline(true)
+                        new EmbedFieldBuilder().WithName("통찰").WithValue(CategoryBuilder(1)).WithIsInline(true),
+                        new EmbedFieldBuilder().WithName("체력").WithValue(CategoryBuilder(2)).WithIsInline(true),
+                        new EmbedFieldBuilder().WithName("의지").WithValue(CategoryBuilder(3)).WithIsInline(true)
                         );
                 return builder;
             } catch (Exception ex)
@@ -41,6 +29,22 @@ namespace Bemunera.Core
                 return new EmbedBuilder();
             }
         }
+
+        private string CategoryBuilder(int idx)
+        {
+            switch (idx)
+            {
+                case 1: 
+                    return $"{Cat1}/6\n\n**공작** {Utils.EmojiRepeat(Act11, ":large_orange_diamond:")}\n**의료** {Utils.EmojiRepeat(Act12, ":large_orange_diamond:")}\n**조사** {Utils.EmojiRepeat(Act13, ":large_orange_diamond:")}\n**해킹** {Utils.EmojiRepeat(Act14, ":large_orange_diamond:")}";
+                case 2:
+                    return $"{Cat2}/6\n\n**공작** {Utils.EmojiRepeat(Act11, ":large_orange_diamond:")}\n**의료** {Utils.EmojiRepeat(Act22, ":large_orange_diamond:")}\n**조사** {Utils.EmojiRepeat(Act23, ":large_orange_diamond:")}\n**해킹** {Utils.EmojiRepeat(Act24, ":large_orange_diamond:")}";
+                case 3:
+                    return $"{Cat3}/6\n\n**공작** {Utils.EmojiRepeat(Act11, ":large_orange_diamond:")}\n**의료** {Utils.EmojiRepeat(Act32, ":large_orange_diamond:")}\n**조사** {Utils.EmojiRepeat(Act33, ":large_orange_diamond:")}\n**해킹** {Utils.EmojiRepeat(Act34, ":large_orange_diamond:")}";
+                default:
+                    return "없음";
+            }
+        }
+
         public string Player { get; set; }
         public string Name { get; set; }
         public string Desc { get; set; }
@@ -53,9 +57,9 @@ namespace Bemunera.Core
         public int Creds { get; set; }
         public int Savings { get; set; }
         public int Cat1 { get; set; }
-        public int Act11 { get; set; }
+        public int Act11 { get; set; } = 2;
         public int Act12 { get; set; }
-        public int Act13 { get; set; }
+        public int Act13 { get; set; } = 1;
         public int Act14 { get; set; }
         public int Cat2 { get; set; }
         public int Act21 { get; set; }
