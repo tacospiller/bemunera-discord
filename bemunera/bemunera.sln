@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34322.80
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lambda", "lambda\src\lambda\lambda.csproj", "{4042583F-6B9A-435D-A7A3-48A0996ABB5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "core", "discord\core.csproj", "{E5F17BF4-41F1-42EF-AD52-336B060B80D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "localclient", "localclient\localclient.csproj", "{F53750C0-65F3-4F8F-BD08-E76803737380}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4042583F-6B9A-435D-A7A3-48A0996ABB5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4042583F-6B9A-435D-A7A3-48A0996ABB5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4042583F-6B9A-435D-A7A3-48A0996ABB5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4042583F-6B9A-435D-A7A3-48A0996ABB5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5F17BF4-41F1-42EF-AD52-336B060B80D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5F17BF4-41F1-42EF-AD52-336B060B80D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5F17BF4-41F1-42EF-AD52-336B060B80D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5F17BF4-41F1-42EF-AD52-336B060B80D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F53750C0-65F3-4F8F-BD08-E76803737380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F53750C0-65F3-4F8F-BD08-E76803737380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F53750C0-65F3-4F8F-BD08-E76803737380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F53750C0-65F3-4F8F-BD08-E76803737380}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5FA7ECE4-AADA-4A2B-BFF8-3471524D1DB8}
+	EndGlobalSection
+EndGlobal

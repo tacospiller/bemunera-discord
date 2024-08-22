@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "localclient": {
+      "commandName": "Project"
+    },
+    "register": {
+      "commandName": "Project",
+      "commandLineArgs": "--register"
+    }
+  }
+}
